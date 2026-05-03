@@ -1,6 +1,13 @@
 import json
 from sentence_transformers import SentenceTransformer
 import chromadb
+
+import os
+
+os.environ["HF_HUB_DISABLE_IMPLICIT_TOKEN"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+
 from app.config import (
     EMBEDDING_MODEL,
     CHROMA_PATH,
